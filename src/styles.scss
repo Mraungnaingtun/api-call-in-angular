@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+@use './app/styles/green-theme.scss';
+@use '@angular/material' as mat;
+@include mat.core();
+
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    overflow: hidden
+}
+
+html {
+    @include mat.core-theme(green-theme.$light-theme);
+    @include mat.button-theme(green-theme.$light-theme);
+}
+
+:root {
+    @include mat.all-component-themes(green-theme.$light-theme);
+}

@@ -1,0 +1,15 @@
+<div class="home">
+  <div class="w-100 p-2 header">Angular API Call Example</div>
+  <div class="row" style="margin: 0;">
+    <div class="col-2 left-list">
+      @for (item of names; track item.name) {
+      <div class="p-2 left-item" [ngClass]="{ 'selected': selectedItem === item.name }" (click)="selectItem(item.name)">
+        {{ item.name }}
+      </div>
+      }
+    </div>
+    <div class="col-10">
+      <pre class="json">{{ jsonObj | json }}</pre>
+    </div>
+  </div>
+</div>

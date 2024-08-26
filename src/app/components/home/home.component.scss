@@ -1,0 +1,33 @@
+.header {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.left-list {
+    overflow: auto;
+    height: calc(100vh - 50px);
+    padding-top: 10px;
+}
+
+.left-item:hover {
+    background-color: #e2ebe2c2;
+    border-radius: 12px;
+}
+
+.left-item {
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.left-item.selected {
+    // background-color: #007bff;
+    background-color: #6dd3717a;
+    border-radius: 12px;
+    color: #085a0b;
+}
+
+
+.json{
+    overflow: auto;
+    height: 550px;
+}
