@@ -55,6 +55,7 @@ export class HomeComponent {
 
   ngOnInit(): void {
      this.getLanguages();
+     this.getDataFromMyHost();
   }
 
 
@@ -89,7 +90,21 @@ export class HomeComponent {
       next: (data) => {
         this.weather = data;
         this.jsonObj = this.weather;
-        console.log('Fetched weathers:', this.weather);
+        console.log('Fetched weathers: data', this.weather);
+      },
+      error: (error) => {
+        console.error('Error fetching weathers:', error);
+      },
+      complete: () => {
+        console.log('weathers fetch complete');
+      }
+    });   
+  }
+
+  getDataFromMyHost(){
+    this.apiService.getMethodFromHost("hello-docker").subscribe({
+      next: (data) => {
+        console.log('Fetched weathers:', data);
       },
       error: (error) => {
         console.error('Error fetching weathers:', error);

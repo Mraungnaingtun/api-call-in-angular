@@ -7,11 +7,16 @@ import { Observable } from 'rxjs';
 })
 export class APIService {
     private apiUrl = 'https://freetestapi.com/api/';
+    private apiUrl2 = 'https://docker-testing-7ih1.onrender.com/';
 
     constructor(private http: HttpClient) { }
 
     getMethod(url: string): Observable<any> {
         return this.http.get<any>(this.apiUrl + url);
+    }
+
+    getMethodFromHost(url: string): Observable<any> {
+        return this.http.get<any>(this.apiUrl2 + url);
     }
 
     postMethod(url: string, data: any, token: string): Observable<any> {
